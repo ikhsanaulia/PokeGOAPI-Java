@@ -83,6 +83,6 @@ public class CatchPokemonAtAreaExample {
 			// failed to login, invalid credentials, auth issue or server issue.
 			Log.e("Main", "Failed to login or server issue: ", e);
 
-		}
+		} 
 	}
 }
