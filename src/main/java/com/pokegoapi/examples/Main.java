@@ -57,7 +57,7 @@ public class CatchPokemonAtAreaExample {
 		try {
 			//or google
 			//new PokemonGo(GoogleCredentialProvider(http,listner));
-			//Subsiquently
+			//Subsiquently 
 			//new PokemonGo(GoogleCredentialProvider(http,refreshtoken));
 			PokemonGo go = new PokemonGo(new PtcCredentialProvider(http, ExampleLoginDetails.LOGIN,
 					ExampleLoginDetails.PASSWORD), http);
