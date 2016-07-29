@@ -193,6 +193,7 @@ public class PtcLogin extends Login {
 
 			return authbuilder.build();
 		} catch (Exception e) {
+			e.printStackTrace();
 			throw new LoginFailedException();
 		}
 

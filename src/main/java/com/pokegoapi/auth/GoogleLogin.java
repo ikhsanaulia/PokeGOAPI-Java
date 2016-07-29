@@ -31,12 +31,13 @@ import java.net.URISyntaxException;
 public class GoogleLogin extends Login {
 	public static final String SECRET = "NCjF1TLi2CcY6t5mt0ZveuL7";
 	public static final String CLIENT_ID = "848232511240-73ri3t7plvk96pj4f85uj8otdat2alem.apps.googleusercontent.com";
-	public static final String OAUTH_ENDPOINT = "https://accounts.google.com/o/oauth2/device/code";
 	public static final String OAUTH_TOKEN_ENDPOINT = "https://www.googleapis.com/oauth2/v4/token";
-	private static final String TAG = GoogleLogin.class.getSimpleName();
-
+	public static final String LOGIN_URL = "https://accounts.google.com/o/oauth2/auth?client_id=848232511240-73ri3t7plvk96pj4f85uj8otdat2alem.apps.googleusercontent.com&redirect_uri=urn%3Aietf%3Awg%3Aoauth%3A2.0%3Aoob&response_type=code&scope=openid%20email%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email";
+	private static final String TAG = "GoogleLogin";
+	private static final long REFRESH_TOKEN_BUFFER_TIME = 5 * 60 * 1000;
 	private final OkHttpClient client;
-
+	public static final String OAUTH_ENDPOINT = "https://accounts.google.com/o/oauth2/device/code";
+	
 	public GoogleLogin(OkHttpClient client) {
 		this.client = client;
 	}

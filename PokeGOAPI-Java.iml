@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module relativePaths="true" type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output/>
+    <orderEntry type="inheritedJdk"/>
+    <content url="file://$MODULE_DIR$/">
+      <sourceFolder url="file://$MODULE_DIR$/src/main/java" isTestSource="false"/>
+      <sourceFolder url="file://$MODULE_DIR$/build/generated/source/proto/main/java" isTestSource="false"/>
+      <excludeFolder url="file://$MODULE_DIR$/build"/>
+      <excludeFolder url="file://$MODULE_DIR$/.gradle"/>
+    </content>
+    <orderEntry type="sourceFolder" forTests="false"/>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///Users/ikhsanaulia/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio/1.9.0/f824591a0016efbaeddb8300bee54832a1398cfa/okio-1.9.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///Users/ikhsanaulia/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio/1.9.0/3aaaf83694e8c88e8c33c71b609f0ad506007a4a/okio-1.9.0-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///Users/ikhsanaulia/.gradle/caches/modules-2/files-2.1/com.squareup.moshi/moshi/1.2.0/c27dff1588c45efcff2e07c29e9d148ee707da29/moshi-1.2.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///Users/ikhsanaulia/.gradle/caches/modules-2/files-2.1/com.squareup.moshi/moshi/1.2.0/65325bf6b252318a66949e10c036ef9cd6bffe8f/moshi-1.2.0-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///Users/ikhsanaulia/.gradle/caches/modules-2/files-2.1/com.annimon/stream/1.1.1/44b203be1b5ac20f50aab73fc7bd2033986692e2/stream-1.1.1.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///Users/ikhsanaulia/.gradle/caches/modules-2/files-2.1/com.annimon/stream/1.1.1/5adae9a1a785e2dc900bfd07666f243c9b1b4071/stream-1.1.1-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///Users/ikhsanaulia/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp/3.4.0-RC1/979305977ca3e5e6339ba77d9bbc805e700317ca/okhttp-3.4.0-RC1.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///Users/ikhsanaulia/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp/3.4.0-RC1/ffbc8ec00e485d41413afa9eb67890c9d0f3dcc5/okhttp-3.4.0-RC1-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///Users/ikhsanaulia/.gradle/caches/modules-2/files-2.1/com.google.protobuf/protobuf-java/3.0.0-beta-3/ed8c2f9a63cfa770292f8173fd0172bdaa014fe3/protobuf-java-3.0.0-beta-3.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES/>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="PROVIDED">
+      <library>
+        <CLASSES>
+          <root url="jar:///Users/ikhsanaulia/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.16.6/9d3a47307466b28632bf35f8972ae9d703879416/lombok-1.16.6.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///Users/ikhsanaulia/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.16.6/2d4bf466aacc3b9c4218d4ac0f63e4fd69fea5bf/lombok-1.16.6-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+  </component>
+  <component name="ModuleRootManager"/>
+</module>
