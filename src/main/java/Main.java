@@ -37,8 +37,10 @@ import com.pokegoapi.api.PokemonGo;
 import com.pokegoapi.api.map.pokemon.CatchResult;
 import com.pokegoapi.api.map.pokemon.CatchablePokemon;
 import com.pokegoapi.api.map.pokemon.EncounterResult;
-import com.pokegoapi.auth.GoogleLogin;
-import com.pokegoapi.auth.PtcLogin;
+import com.pokegoapi.auth.GoogleAuthJson;
+import com.pokegoapi.auth.GoogleAuthTokenJson;
+import com.pokegoapi.auth.GoogleCredentialProvider;
+import com.pokegoapi.auth.GoogleCredentialProvider.OnGoogleLoginOAuthCompleteListener;
 import com.pokegoapi.examples.ExampleLoginDetails;
 import com.pokegoapi.exceptions.LoginFailedException;
 import com.pokegoapi.exceptions.RemoteServerException;
@@ -62,13 +64,27 @@ public class Main {
 		
 		OkHttpClient http = new OkHttpClient();
 		RequestEnvelopeOuterClass.RequestEnvelope.AuthInfo auth = null;
-		
 		try {
 			//auth = new GoogleLogin(http).login("eyJhbGciOiJSUzI1NiIsImtpZCI6IjUwNzgyYmNmMGE5NzQxZTZiZjkwMjY2ZGMzNTY4YWE5MDc5MWYxNmYifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJhdF9oYXNoIjoiUDc4bl9TQ0h2VDdCNWxSQ3ZrM0xBdyIsImF1ZCI6Ijg0ODIzMjUxMTI0MC03M3JpM3Q3cGx2azk2cGo0Zjg1dWo4b3RkYXQyYWxlbS5hcHBzLmdvb2dsZXVzZXJjb250ZW50LmNvbSIsInN1YiI6IjEwMzU0NjAwNDM0ODc0MDgyOTg3OCIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJhenAiOiI4NDgyMzI1MTEyNDAtNzNyaTN0N3Bsdms5NnBqNGY4NXVqOG90ZGF0MmFsZW0uYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJlbWFpbCI6ImlraHNhbi5hdWxpYUBnbWFpbC5jb20iLCJpYXQiOjE0Njk1OTE2NTMsImV4cCI6MTQ2OTU5NTI1M30.rYJR92fq-IBnIbq_FI6ffR_uy4jZLZ522ibFS4PYu6Q0yYxsf_kfptq4zd5lBeCavjEnbDqRw0P0vR6g90f-hdI3bL_6jhniTdmldQd6AfHiawiOSf4Vbw7Fl8hNaTZSqPxJ3r7OdcvadgR9EyZThmOeCk3h4GD7k0zDGFeiOmwNRZy6NJ_MsM0RC3cuzof13H2-6HcgdHIgGdwTJsN0qIKHKIfPQpmKyzf28CLjxmyZkNqPCqMzV_qEUhcScY_qe3FG6EYK1xeMlohj1jM5WlqrH9Is_jiptRm_XCBTzoh-WWFYc_Sfav7a1F2-OF-fM3DfCxHXhjaoYa6gFjUCaQ");
 			//auth = new PtcLogin(http).login(ExampleLoginDetails.LOGIN, ExampleLoginDetails.PASSWORD);
-			auth = new GoogleLogin(http).login(ExampleLoginDetails.LOGIN, ExampleLoginDetails.PASSWORD); // currently uses oauth flow so no user or pass needed
+			//auth = new GoogleLogin(http).login(ExampleLoginDetails.LOGIN, ExampleLoginDetails.PASSWORD); // currently uses oauth flow so no user or pass needed
 			
-			PokemonGo go = new PokemonGo(auth, http);
+			PokemonGo go = new PokemonGo(new GoogleCredentialProvider(http, 
+					new OnGoogleLoginOAuthCompleteListener() {
+
+						@Override
+						public void onInitialOAuthComplete(
+								GoogleAuthJson googleAuthJson) {
+							System.out.println();
+						}
+
+						@Override
+						public void onTokenIdReceived(
+								GoogleAuthTokenJson googleAuthTokenJson) {
+							System.out.println();
+						}
+					}
+			), http);
 			
 			go.setLocation(-32.0580824,115.7421363, 0);
 

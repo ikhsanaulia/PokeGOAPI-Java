@@ -29,8 +29,32 @@ public final class GPSUtils {
 	public static void main (String[] args) throws FileNotFoundException, ParserConfigurationException, TransformerException {
 
 		Position start = Position.create(106.832120, -6.178551);
-		Position end = Position.create(106.827174, -6.175372);
-		List<Position> waypoints = generateWaypoints(start, end, 20, 25);
+		List<Position> waypoints = new LinkedList<>();
+		
+		int d = -60;
+		int c = 0;
+		int z = 0;
+		Position position = start;
+		for (int i = 0; i < 1000; i++) {
+			
+			d += 60;
+			c++;
+//			if (d > 360) {
+//				d = d % 360;
+//			}
+			
+			if (c == 4 || z == 2) {
+				if (z < 2)
+					z++;
+				else
+					z = 0;
+				c = 0;
+				d = d - 120;
+			}
+			
+			position = travel(position, 1000, d);
+			waypoints.add(position);
+		};
 		
 		GPX gpx = new GPX();
 		waypoints.stream().forEach(e -> {
@@ -41,6 +65,22 @@ public final class GPSUtils {
 		GPXWriter wr = new GPXWriter();
 		wr.writeGPX(gpx, new FileOutputStream(new File("waypoints.gpx")));
 	}
+	
+//	public static void main (String[] args) throws FileNotFoundException, ParserConfigurationException, TransformerException {
+//
+//		Position start = Position.create(106.832120, -6.178551);
+//		Position end = Position.create(106.827174, -6.175372);
+//		List<Position> waypoints = generateWaypoints(start, end, 20, 25);
+//		
+//		GPX gpx = new GPX();
+//		waypoints.stream().forEach(e -> {
+//			gpx.addWaypoint(new Waypoint(e.getLongitude().getValue(), e.getLatitude().getValue()));
+//			System.out.println(e.longitude.getValue() + "," + e.latitude.getValue());
+//		});
+//		
+//		GPXWriter wr = new GPXWriter();
+//		wr.writeGPX(gpx, new FileOutputStream(new File("waypoints.gpx")));
+//	}
 	
 	public static List<Position> generateWaypoints(Position start, Position end, double incr, double radius) {
 		List<Position> waypoints = new LinkedList<GPSUtils.Position>();

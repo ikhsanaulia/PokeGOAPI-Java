@@ -19,6 +19,6 @@ package com.pokegoapi.examples;
  * Created by court on 19/07/2016.
  */
 public class ExampleLoginDetails {
-	public static String LOGIN = "p.mardikawati@gmail.com";
+	public static String LOGIN = "Ponimar";
 	public static String PASSWORD = 																							"mangga0690";
 }
